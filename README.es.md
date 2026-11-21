@@ -1,8 +1,8 @@
-# 🇪🇨 EPS Ecuador — Plataforma de Inteligencia RAG
+# EPS Ecuador — Plataforma de Inteligencia RAG
 
 > Plataforma de análisis impulsada por IA para el sector de la **Economía Popular y Solidaria (EPS)** en Ecuador, combinando búsqueda vectorial semántica, LLMs locales y dashboards interactivos.
 
-🌐 **[English](README.md)** | **Español**
+**[English](README.md)** | **Español**
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io)
@@ -10,35 +10,35 @@
 [![Ollama](https://img.shields.io/badge/Ollama-Llama_3-000000?logo=meta&logoColor=white)](https://ollama.ai)
 
 > [!NOTE]
-> **Proyecto de Tesis y Portafolio**: Este repositorio contiene la arquitectura de software, el pipeline de datos (ETL) y el código fuente desarrollados para una tesis de ingeniería. Para ejecutarlo localmente, configure un clúster de MongoDB Atlas con Vector Search y una instancia local de Ollama según la [Guía de Inicio](#-guía-de-inicio-rápido).
+> **Proyecto de Portafolio**: Este repositorio contiene la arquitectura de software, el pipeline de datos (ETL) y el código fuente desarrollados para una tesis de ingeniería. Para ejecutarlo localmente, configure un clúster de MongoDB Atlas con Vector Search y una instancia local de Ollama según la [Guía de Inicio](#guía-de-inicio-rápido).
 
 ---
 
-## 🎯 ¿Qué hace la plataforma?
+## ¿Qué hace la plataforma?
 
 Esta plataforma permite a investigadores, analistas y tomadores de decisiones **hacer preguntas en lenguaje natural** sobre el sector de la economía social y solidaria del Ecuador, obteniendo respuestas fundamentadas en datos oficiales mediante RAG (*Retrieval-Augmented Generation*):
 
-- 💬 **Chat con IA** — Consultas técnicas en español con respuestas respaldadas por datos reales.
-- 🔍 **Búsqueda Semántica** — Búsqueda de organizaciones por similitud vectorial (significado y contexto, no solo palabras clave).
-- 📊 **Dashboard Interactivo** — Métricas territoriales por provincia, desglose por sectores e integración con Power BI.
-- 🧬 **Pipeline ETL** — Procesamiento y unificación de 3 años de datos oficiales (2022-2024) de múltiples fuentes del Estado.
+- **Chat con IA** — Consultas técnicas en español con respuestas respaldadas por datos reales.
+- **Búsqueda Semántica** — Búsqueda de organizaciones por similitud vectorial (significado y contexto, no solo palabras clave).
+- **Dashboard Interactivo** — Métricas territoriales por provincia, desglose por sectores e integración con Power BI.
+- **Pipeline ETL** — Procesamiento y unificación de 3 años de datos oficiales (2022-2024) de múltiples fuentes del Estado.
 
-## 🏗️ Arquitectura del Sistema
+## Arquitectura del Sistema
 
 ```mermaid
 flowchart LR
-    A["📂 Datos CSV Crudos
+    A["Datos CSV Crudos
     ENEMDU, Registros,
-    Financieros, Socios"] -->|Pipeline ETL| B["🧬 Generador de
+    Financieros, Socios"] -->|Pipeline ETL| B["Generador de
     Super Objetos"]
-    B --> C["🍃 MongoDB Atlas"]
-    C -->|Procesamiento por Lotes| D["🔢 Generador de
+    B --> C["MongoDB Atlas"]
+    C -->|Procesamiento por Lotes| D["Generador de
     Embeddings
     nomic-embed-text"]
     D --> C
-    C -->|Búsqueda Vectorial| E["🤖 Asistente RAG
+    C -->|Búsqueda Vectorial| E["Asistente RAG
     Llama 3"]
-    C --> F["📊 Dashboard
+    C --> F["Dashboard
     Streamlit"]
     E --> F
 ```
@@ -49,7 +49,7 @@ flowchart LR
 2. **Consulta**: La pregunta del usuario se vectoriza con el mismo modelo → la búsqueda por similitud vectorial recupera las $K$ organizaciones más relevantes.
 3. **Generación**: La información recuperada junto con las estadísticas provinciales se inyectan como contexto estructurado en Llama 3, generando una respuesta técnica libre de alucinaciones.
 
-## 🚀 Guía de Inicio Rápido
+## Guía de Inicio Rápido
 
 ### Prerrequisitos
 
@@ -99,7 +99,7 @@ python -m src.etl.data_loader
 python -m src.embeddings.generator
 ```
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 eps-ecuador-rag/
@@ -123,7 +123,7 @@ eps-ecuador-rag/
 └── README.es.md              # Versión en Español
 ```
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 | Componente | Tecnología |
 |------------|------------|
@@ -134,7 +134,7 @@ eps-ecuador-rag/
 | **Frontend Interactivo** | Streamlit, Plotly |
 | **Inteligencia de Negocios** | Power BI Embedded |
 
-## 📊 Fuentes de Datos Oficiales
+## Fuentes de Datos Oficiales
 
 | Conjunto de Datos | Fuente Institucional | Volumen Aprox. |
 |-------------------|----------------------|----------------|
@@ -144,6 +144,6 @@ eps-ecuador-rag/
 | Indicadores de Pobreza | ENEMDU 2024 (INEC) | ~17M registros de encuesta |
 | Población Adulta Territorial | REBPE 2023 (INEC) | ~17M registros censales |
 
-## 📝 Licencia
+## Licencia
 
 Distribuido bajo la licencia [MIT](LICENSE). © Mario Saul
