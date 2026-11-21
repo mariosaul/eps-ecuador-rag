@@ -2,6 +2,8 @@
 
 > AI-powered analysis platform for Ecuador's **Economía Popular y Solidaria** (Social & Solidarity Economy) sector, combining vector search, local LLMs, and interactive dashboards.
 
+🌐 **English** | **[Español](README.es.md)**
+
 > [!NOTE]
 > **Academic Thesis & Portfolio Showcase**: This repository contains the architecture, data pipeline, and codebase developed for a graduate/engineering thesis. To run this project locally, configure your own MongoDB Atlas Vector Search cluster and local Ollama instance following the [Quick Start](#-quick-start) guide.
 
