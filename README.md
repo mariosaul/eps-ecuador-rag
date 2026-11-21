@@ -1,11 +1,9 @@
-# 🇪🇨 EPS Ecuador — RAG Intelligence Platform
+# EPS Ecuador — RAG Intelligence Platform
 
 > AI-powered analysis platform for Ecuador's **Economía Popular y Solidaria** (Social & Solidarity Economy) sector, combining vector search, local LLMs, and interactive dashboards.
 
-🌐 **English** | **[Español](README.es.md)**
-
 > [!NOTE]
-> **Academic Thesis & Portfolio Showcase**: This repository contains the architecture, data pipeline, and codebase developed for a graduate/engineering thesis. To run this project locally, configure your own MongoDB Atlas Vector Search cluster and local Ollama instance following the [Quick Start](#-quick-start) guide.
+> **Academic Thesis & Portfolio Showcase**: This repository contains the architecture, data pipeline, and codebase developed for a graduate/engineering thesis. To run this project locally, configure your own MongoDB Atlas Vector Search cluster and local Ollama instance following the [Quick Start](#quick-start) guide.
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io)
@@ -14,31 +12,31 @@
 
 ---
 
-## 🎯 What It Does
+## What It Does
 
 This platform lets researchers and policymakers **ask natural language questions** about Ecuador's social economy sector and get data-driven answers powered by RAG (Retrieval-Augmented Generation):
 
-- 💬 **AI Chat** — Ask questions in Spanish, get analysis backed by real data
-- 🔍 **Semantic Search** — Find relevant organizations using vector similarity (not just keywords)
-- 📊 **Interactive Dashboard** — Province-level metrics, sector breakdowns, and Power BI integration
-- 🧬 **ETL Pipeline** — Processes 3 years of government data (2022-2024) from multiple sources
+- **AI Chat** — Ask questions in Spanish, get analysis backed by real data
+- **Semantic Search** — Find relevant organizations using vector similarity (not just keywords)
+- **Interactive Dashboard** — Province-level metrics, sector breakdowns, and Power BI integration
+- **ETL Pipeline** — Processes 3 years of government data (2022-2024) from multiple sources
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 flowchart LR
-    A["📂 Raw CSV Data
+    A["Raw CSV Data
     ENEMDU, Registros,
-    Financieros, Socios"] -->|ETL Pipeline| B["🧬 Super Object
+    Financieros, Socios"] -->|ETL Pipeline| B["Super Object
     Builder"]
-    B --> C["🍃 MongoDB Atlas"]
-    C -->|Batch Processing| D["🔢 Embedding
+    B --> C["MongoDB Atlas"]
+    C -->|Batch Processing| D["Embedding
     Generator
     nomic-embed-text"]
     D --> C
-    C -->|Vector Search| E["🤖 RAG Assistant
+    C -->|Vector Search| E["RAG Assistant
     Llama 3"]
-    C --> F["📊 Streamlit
+    C --> F["Streamlit
     Dashboard"]
     E --> F
 ```
@@ -49,7 +47,7 @@ flowchart LR
 2. **Query**: User question → embedded with the same model → vector similarity search finds top-K relevant orgs
 3. **Generate**: Retrieved documents + province statistics → injected as context → Llama 3 generates a grounded answer
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -99,7 +97,7 @@ python -m src.etl.data_loader
 python -m src.embeddings.generator
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 eps-ecuador-rag/
@@ -122,7 +120,7 @@ eps-ecuador-rag/
 └── README.md
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |-----------|-----------|
@@ -133,7 +131,7 @@ eps-ecuador-rag/
 | **Frontend** | Streamlit, Plotly |
 | **BI Integration** | Power BI Embedded |
 
-## 📊 Data Sources
+## Data Sources
 
 | Dataset | Source | Records |
 |---------|--------|---------|
@@ -143,6 +141,6 @@ eps-ecuador-rag/
 | Poverty Indicators | ENEMDU 2024 (INEC) | ~17M survey records |
 | Adult Population | REBPE 2023 (INEC) | ~17M census records |
 
-## 📝 License
+## License
 
 [MIT](LICENSE) © Mario Saul
