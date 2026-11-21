@@ -5,7 +5,7 @@
 **English** | **[Español](README.es.md)**
 
 > [!NOTE]
-> **Academic Thesis & Portfolio Showcase**: This repository contains the architecture, data pipeline, and codebase developed for a graduate/engineering thesis. To run this project locally, configure your own MongoDB Atlas Vector Search cluster and local Ollama instance following the [Quick Start](#quick-start) guide.
+> **Portfolio Showcase**: This repository contains the architecture, data pipeline, and codebase developed for a graduate/engineering thesis. To run this project locally, configure your own MongoDB Atlas Vector Search cluster and local Ollama instance following the [Quick Start](#quick-start) guide.
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io)
